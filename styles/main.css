@@ -1,0 +1,1928 @@
+/*CSS Reset*/
+/*导入字体图标文件*/
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+/*默认的字体图标样式*/
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {font: 12px/150% Arial,Verdana,"宋体";}
+ul,ol,li {list-style: none;}
+a {color: #666; text-decoration: none;}
+a:hover {color: #C81623;}
+img {border: none 0;}
+
+/*需要居中显示的内容添加此类*/
+.w {
+  width: 1210px;
+  margin: 0 auto;
+}
+/*需要高亮显示的文本添加此类*/
+.hot {color: #C81623 !important;}
+/*需要清楚浮动添加此类*/
+.clear {
+  clear: both;
+  width: 1210px;
+  height: 1;
+  display: block;
+}
+/*一.top(顶部导航条) start*/
+#top {
+  width: 100%;
+  height: 30px;
+  color: #666;
+  background-color: #F1F1F1;
+}
+/*顶部导航链接初始样式*/
+#top .fl {float: left;}
+#top .fr {float: right;}
+/*一级菜单*/
+#top .first-menu {
+  position: relative;
+  z-index: 101;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+/*导航分隔符*/
+#top .split {
+  float: left;
+  width: 1px;
+  height: 12px;
+  margin: 9px 1px 0 1px;
+  background-color: #DDD;
+  overflow: hidden;
+}
+/*带有下拉面板的一级菜单,鼠标悬停时用JS添加此样式*/
+#top li.dropdown.hover {
+  height: 30px;
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+  padding: 0 9px;
+  background: #FFF;
+}
+/*下拉面板共用样式*/
+#top li.dropdown .dropdown-panel {
+  position: absolute;
+  top: 30px;
+  left: -1px;
+  border: 1px solid #DDD;
+  border-top: none 0;
+  background: #FFF;
+  display: none;
+}
+
+/*城市选择下拉面板*/
+#top li.dropdown.city .dropdown-panel {width: 300px; padding:15px 0 15px 15px;}
+#top li.dropdown.city .dropdown-panel .item {float: left; display: block; width: 60px;}
+#top li.dropdown.city .dropdown-panel .item a {padding: 5px 9px;}
+#top li.dropdown.city .dropdown-panel .item a:hover {color: #C81623; background: #F4F4F4;}/*鼠标悬停城市列表项时的样式*/
+#top li.dropdown.city .dropdown-panel .item a.selected {color: #FFF; background: #C81623;}/*鼠标点击后的城市列表项样式,通过js添加*/
+/*我的京东下拉面板*/
+#top li.dropdown.fore3 .dropdown-panel {width: 270px;}
+/*用户信息*/
+#top li.dropdown.fore3 .dropdown-panel .user-info {
+  height: 60px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+/*用户头像*/
+#top li.dropdown.fore3 .dropdown-panel .user-info img {
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+/*用户名 */
+#top li.dropdown.fore3 .dropdown-panel .user-info .u-name {
+  display: block;
+  font-weight: 700;
+  line-height: 24px;
+}
+#top li.dropdown.fore3 .dropdown-panel .user-info .coupom {margin-right: 10px;}/*优惠券*/
+#top li.dropdown.fore3 .dropdown-panel .user-info .news   {margin-left: 10px;}/*消息*/
+#top li.dropdown.fore3 .dropdown-panel .other-list {padding: 0 10px;}/*其他信息容器*/
+/*其他信息列表*/
+#top li.dropdown.fore3 .dropdown-panel .other-list .item {
+  float: left;
+  width: 120px;
+  line-height: 24px;
+}
+#top li.dropdown.fore3 .dropdown-panel .view-list {/*浏览历史容器*/
+  float: left;
+  margin-top: 20px;
+  border-top: 1px dashed #DDD;
+  padding:10px;
+}
+#top li.dropdown.fore3 .dropdown-panel .view-list .view-hd {width: 100%;line-height: 24px;}/*浏览历史头部*/
+#top li.dropdown.fore3 .dropdown-panel .view-list h4 {float: left;font-size: 12px;}
+#top li.dropdown.fore3 .dropdown-panel .view-list span {float: right;}
+#top li.dropdown.fore3 .dropdown-panel .view-list .view-bd {float: left;}/*浏览历史内容*/
+#top li.dropdown.fore3 .dropdown-panel .view-list .view-bd img {width: 50px;height: 50px;}
+/*手机京东下拉面板*/
+#top li.dropdown.fore6 .dropdown-panel {
+  width: 250px;
+  height: 195px;
+  background: url(../images/553ee53dNd094c4df.png) no-repeat;
+}
+#top li.dropdown.fore6 .dropdown-panel a {
+  position: absolute;
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+#top li.dropdown.fore6 .dropdown-panel a.app-link {/*app下载链接*/
+  width: 45px;
+  height: 45px;
+}
+/*京东客户端*/
+#top li.dropdown.fore6 .dropdown-panel a.jdapp-title {/*app标题*/
+  top: 10px;
+  left: 95px;
+  width: 120px;
+  height: 18px;
+}
+#top li.dropdown.fore6 .dropdown-panel a.jdapp-iphone  {left: 95px;  top: 45px;}/*京东客户端iphone版本*/
+#top li.dropdown.fore6 .dropdown-panel a.jdapp-android {left: 150px; top: 45px;}/*京东客户端android版本*/
+#top li.dropdown.fore6 .dropdown-panel a.jdapp-ipad    {left: 205px; top: 45px;}/*京东客户端ipad版本*/
+/*京东钱包客户端*/
+#top li.dropdown.fore6 .dropdown-panel a.wyapp-title {
+  top: 105px;
+  left: 95px;
+  width: 120px;
+  height: 18px;
+}
+#top li.dropdown.fore6 .dropdown-panel a.wyapp-iphone  {top: 140px; left: 95px; }/*京东钱包客户端iphone版本*/
+#top li.dropdown.fore6 .dropdown-panel a.wyapp-android {top: 140px; left: 150px;}/*京东钱包客户端android版本*/
+/*关注京东下拉面板*/
+#top li.dropdown.fore7 .dropdown-panel {
+  padding-left: 3px;
+  _padding-right: 3px;
+}
+/*客户服务下拉面板*/
+#top li.dropdown.fore8 .dropdown-panel .item {
+  width: 85px;
+  _width: 88px;
+  text-align: center;
+}
+/*网站导航下拉面板*/
+#top li.dropdown.fore9 .dropdown-panel {
+  left: -1124px;
+  _left: -1121px;/*解决IE6下3像素Bug*/
+  width: 1208px;
+  padding: 30px 0;
+}
+#top li.dropdown.fore9 .dropdown-panel dl {
+  float: left;
+  display: inline-block;
+  padding-left: 19px;
+  border-left: 1px solid #DDD;
+}
+/*各分类宽度*/
+#top li.dropdown.fore9 .dropdown-panel dl.fore1 {width: 327px; border-left: 0 none;}
+#top li.dropdown.fore9 .dropdown-panel dl.fore2,
+#top li.dropdown.fore9 .dropdown-panel dl.fore3,
+#top li.dropdown.fore9 .dropdown-panel dl.fore4 {width: 266px;}
+#top li.dropdown.fore9 .dropdown-panel dl dt {/*标题样式*/
+  float: left;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+}
+#top li.dropdown.fore9 .dropdown-panel dl dd {/*内容样式*/
+  float: left;
+  width: 80px;
+}
+/*二.header(头部) start */
+#header {
+  height: 80px;
+  padding-top: 20px;
+}
+#header .logo {/*logo*/
+  float: left;
+  display: block;
+  width: 270px;
+  height: 60px;
+  text-indent: -9999px;
+  margin-right: 95px;
+  overflow: hidden;
+  background: url(../images/logo-201305.png) no-repeat;
+}
+#header .search {/*搜索板块*/
+  float:left;
+  width: 540px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+#header .search input {/*搜索框*/
+  float: left;
+  width: 450px;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 5px;
+  border: 2px solid #B61D1D;
+  color: #999;
+}
+#header .search button {/*搜索按钮*/
+  float: left;
+  color: #FFF;
+  font-size: 18px;
+  width: 76px;
+  height: 36px;
+  border: 0 none;
+  background: #B61D1D;
+}
+#header .search .hot-search {/*热门搜索容器*/
+  width: 100%;
+  margin-top: 5px; 
+  float: left;
+}
+#header .search .hot-search a {margin-right: 5px;}/*热门搜索*/
+#header .shopping-cart {/*购物车板块*/
+  position: relative;
+  z-index: 30;
+  float: left;
+  width: 140px;
+  height: 36px;
+  line-height: 36px;
+  margin: 5px 0 0 95px;
+  border: 1px solid #E4E4E4;
+  background: #F7F7F7;
+  text-align: center;
+}
+#header .shopping-cart.hover {/*鼠标悬停"我的购物车"时的样式,通过js添加*/
+  background: #FFF;
+  box-shadow: 0 0 5px #bbb;
+}
+#header .shopping-cart i {position: absolute;color: #B61D1D;}
+#header .shopping-cart i.cart          {top: -2px; left: 15px;}
+#header .shopping-cart i.arrow         {top: 0;   right: 3px; color: #999;}
+#header .shopping-cart i.white-bg {/*鼠标悬停"我的购物车"时,通过js添加,用于遮住"我的购物车"下边框与下拉面板上边框*/
+  z-index: 20;
+  top:30px;
+  left: 0;
+  display: block;
+  height: 6px;
+  width: 140px;
+  overflow: hidden;
+  background: #FFF;
+}
+#header .shopping-cart .commodity-num {/*购物车商品数量*/
+  top: 0;
+  right: 23px;
+  z-index: 20;
+  display: block;
+  height: 15px;
+  line-height: 15px;
+  padding: 0 5px;
+  color: #FFF;
+  background: #B61D1D;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+}
+#header .shopping-cart .dropdown {/*购物车下拉面板*/
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: -1px;
+  z-index: 10;
+  width: 330px;
+  height: 49px;
+  line-height: 49px;
+  padding: 10px 0 10px 50px;
+  border: 1px solid #E4E4E4;
+  box-shadow: 0 0 5px #bbb;
+  text-align: left;
+  color: #666;
+  background: #FFF;
+}
+#header .shopping-cart .dropdown b {/*购物车商品数量为0时下拉面板里的图片*/
+  display: inline-block;
+  float: left;
+  width: 57px;
+  height: 49px;
+  background: url(../images/settleup-nogoods.png) no-repeat;
+}
+/*三.nav(网站导航) start */
+#nav {
+  position: relative;
+  z-index: 20;
+  height: 42px;
+  border-bottom: 2px solid #B1191A;
+}
+#nav .w {position: relative;}
+#nav dl.categorys {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 210px;
+  font-size: 14px;
+  color: #FFF;
+  background: #C81623;
+  font-family: "microsoft yahei";
+}
+#nav dl.categorys dt a {
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 10px;
+  font-size: 15px;
+  color: #FFF;
+  background: #B1191A;
+}
+#nav dl.categorys dd {
+  width: 190px;
+  height: 31px;
+  line-height: 31px;
+  padding: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
+#nav dl.categorys dd.last {
+  border-bottom: 1px solid #C81623;
+}
+#nav dl.categorys dd a {float: left; color: #FFF;}
+#nav dl.categorys dd i.arrow {float: right;}
+
+#nav dl.categorys dd.hover a {color: #B1191A;}/*鼠标悬停时的样式,通过js添加*/
+#nav dl.categorys dd.hover {/*鼠标悬停时的样式,通过js添加*/
+  color: #B1191A;
+  background: #F7F7F7; 
+  border-left: 1px solid #C81623; 
+  padding-left: 9px;
+}
+
+#nav .site-nav {/*网站导航*/
+  position: absolute;
+  top: 0;
+  left: 210px;
+}
+#nav .site-nav li {/*导航列表项*/
+  float: left;
+  height: 44px;
+  line-height: 44px;
+}
+#nav .site-nav li a {
+  float: left;
+  font-size: 15px;
+  margin: 0 20px;
+  font-family: "microsoft yahei";
+}
+#nav .goods {/*哟喂!尖er货*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 140px;
+  height: 40px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url(../images/553f2f62Nf7429d2c.jpg) no-repeat;
+}
+#nav .detail-categorys {/*详细分类*/
+  position: absolute;
+  top: 44px;
+  left: 209px;
+  z-index: 30;
+  width: 958px;
+  min-height: 431px;
+  _height: 431px;
+  padding: 17px 20px;
+  border: 1px solid #B1191A;
+  border-top: 0 none;
+  background: #F7F7F7;
+  display: none;
+}
+#nav .detail-categorys .fl {/*详细分类列表*/
+  float: left;
+  width: 710px;
+}
+#nav .detail-categorys .fl .channels a {/*购物渠道链接*/
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  margin-right: 10px;
+  color: #FFF;
+  background: #7C7171;
+}
+#nav .detail-categorys .fl .channels a i {/*购物渠道右边小箭头*/
+  display: inline-block;
+  width: 23px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  color: #FFF;
+  background: #5C5251;
+}
+#nav .detail-categorys .fl .channels a.hover {background: #C81623;}/*鼠标悬停购物渠道时的样式,通过js添加*/
+#nav .detail-categorys .fl .channels a.hover i {background: #B1191A;}/*鼠标悬停购物渠道时的样式,通过js添加*/
+#nav .detail-categorys .fl .channels span {padding: 0 15px;}/*购物渠道文本*/
+/*详细分类*/
+#nav .detail-categorys .fl dl {
+  float: left;
+  margin-top: 15px;
+}
+#nav .detail-categorys .fl dt {/*详细分类标题*/
+  position: relative;
+  float: left;
+  width: 54px;
+  height: 100%;
+  margin: 5px 30px 0 0;
+  font-weight: bold;
+  text-align: right;
+}
+#nav .detail-categorys .fl dt i {/*详细分类标题右边小箭头*/
+  position: absolute;
+  top: 0;
+  right: -20px;
+  font-weight: normal;
+}
+#nav .detail-categorys .fl dd {/*详细分类项目*/
+  float: left;
+  display: block;
+  width: 600px;
+  border-bottom: 1px solid #EEE;
+}
+#nav .detail-categorys .fl dd a img {
+  vertical-align: bottom;
+}
+#nav .detail-categorys .fl dd a {/*详细分类项目链接*/
+  display: inline-block;
+  padding: 0 8px;
+  margin: 5px 0;
+  border-left: 1px solid #EEE;
+}
+#nav .detail-categorys .fr {/*右边品牌展示/促销面板*/
+  float: right;
+  width: 175px;
+}
+#nav .detail-categorys .fr .brand {/*品牌展示*/
+  margin-bottom: 10px;
+  float: left;
+}
+#nav .detail-categorys .fr .brand a {
+  display: block;
+  float: left;
+  width: 83px;
+  height: 35px;
+  margin: 0 2px 2px 0;
+  overflow: hidden;
+}
+#nav .detail-categorys .fr .brand img {/*品牌展示图片*/
+  width: 83px;
+  height: 35px;
+}
+#nav .detail-categorys .fr .promotion {float: left;}/*促销活动*/
+#nav .detail-categorys .fr .promotion a {
+  display: block;
+  float: left;
+  width: 168px;
+  height: 134px;
+  margin: 0 2px 2px 0;
+  overflow: hidden;
+}
+#nav .detail-categorys .fr .promotion img {/*促销活动图片*/
+  width: 168px;
+  height: 134px;
+}
+
+/*焦点板块*/
+#focus {
+  position: relative;
+  z-index: 0;
+  width: 990px;
+  height: 454px;
+  margin: 0 auto;
+  padding: 11px 0 0 220px;
+}
+
+/*焦点板块其他区域*/
+#focus .extra {
+  position: absolute;
+  top: 11px;
+  right: 0;
+  width: 248px;
+  height: 452px;
+  border: 1px solid #E4E4E4;
+}
+#focus .extra .title {/*额外区域共用标题*/
+  float: left;
+  width: 218px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #E4E4E4;
+}
+#focus .extra .title h3 {/*额外区域共用标题*/
+  float: left;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "microsoft yahei";
+}
+#focus .extra .title span {float: right;}/*"更多"链接*/
+#focus .extra .news ul {/*京东快报新闻列表*/
+  float: left;
+  padding: 12px 15px;
+  width: 218px;
+  border-bottom: 1px dashed #E4E4E4;
+}
+#focus .extra .news ul li {/*京东快报新闻列表项*/
+  height: 27px;
+  line-height: 27px;
+  _height: 26px;
+  _line-height: 26px;
+}
+#focus .extra .service .type1 {/*生活服务*/
+  float: left;
+  width: 248px;
+  height: 208px;
+}
+#focus .extra .service .type1 li {/*样式1列表项*/
+  float: left;
+  width: 61px;
+  height: 68px;
+}
+
+#focus .extra .service .type1 li a {/*样式1链接样式*/
+  display: block;
+  width: 61px;
+  height: 68px;
+  border-right: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E4E4E4;
+  float: left;
+  color: #666;
+  text-align: center;
+  cursor: pointer;
+}
+#focus .extra .service .type1 li a:hover {color: #B61D1D;}
+#focus .extra .service .type1 li a i {/*图标,源于字体文件*/
+  padding-top: 20px;
+  display: block;
+  font-size: 30px;
+}
+#focus .extra .service .type1 li a span {/*说明文字*/
+  display: block;
+  height: 30px;
+  line-height: 30px;
+}
+/*样式1最左列去除右边框,最低行去除去除下边框*/
+#focus .extra .service .type1 li.fore4 a,
+#focus .extra .service .type1 li.fore8 a,
+#focus .extra .service .type1 li.fore12 a {border-right: 0 none;}
+#focus .extra .service .type1 li.fore9 a,
+#focus .extra .service .type1 li.fore10 a,
+#focus .extra .service .type1 li.fore11 a,
+#focus .extra .service .type1 li.fore12 a {border-bottom: 0 none;}
+
+/*今日推荐板块*/
+#todays {
+  height: 164px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+/*时钟*/
+#todays .clock {
+  float: left;
+  width: 210px;
+  height: 151px;
+  background: url(../images/homebg.png) no-repeat -213px -136px;
+}
+.class-title {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  font-family: "microsoft yahei";
+  margin-bottom: 8px;
+}
+.class-title h3 {
+  float: left;
+  font-size: 20px;
+  padding-right: 222px;
+  font-weight: normal;
+}
+
+/*猜你喜欢*/
+
+#may-like {
+  position: relative;
+  height: 269px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+#may-like .class-title h3 {
+  padding-right: 222px;
+  background: url(../images/homebg.png) no-repeat 90px -92px;
+}
+#may-like .class-title a {
+  float: right;
+  padding-right: 25px;
+  background: url(../images/homebg.png) no-repeat -312px 0;
+}
+#may-like .class-title a:hover {
+  background: url(../images/homebg.png) no-repeat -312px -24px;
+}
+#may-like .spacer {
+  position: relative;
+  height: 1px;
+  background: #DEDEDE;
+}
+#may-like .spacer i {
+  position: absolute;
+  width: 365px;
+  height: 5px;
+  top: -2px;
+  right: -1px;
+  background: url(../images/homebg.png) no-repeat 0 -124px;
+  overflow: hidden;
+}
+#may-like ul {
+  width: 1208px;
+  height: 230px;
+  border: 1px solid #DEDEDE;
+  border-top: none 0;
+}
+#may-like ul li {
+  float: left;
+  width: 201px;
+  padding: 15px 0;
+}
+#may-like .pic {
+  margin-bottom: 10px;
+  text-align: center;
+}
+#may-like .pic img {
+  width: 130px;
+  height: 130px;
+}
+#may-like .info {
+  text-align: center;
+  border-right: 1px solid #DEDEDE;
+}
+#may-like .info span {
+  display: block;
+}
+#may-like .info .name {
+  padding: 0 20px;
+  width: 160px;
+  height: 36px;
+  overflow: hidden;
+}
+#may-like .info .price {
+  color: #B1191A;
+  font-size: 18px;
+}
+
+/*ccr(京东特色购) start*/
+#ccr {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-family: "microsoft yahei";
+}
+/*标题*/
+#ccr h3 {
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 7px;
+}
+#ccr ul li {
+  float: left;
+  margin-right: 2px;
+  margin-bottom: 2px;
+}
+#ccr ul li a {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 170px;
+}
+#ccr ul li a img {
+  width: 300px;
+  height: 170px;
+}
+/*最后一张图片宽度*/
+#ccr ul li.last a,
+#ccr ul li.last a img {
+  width: 150px;
+}
+#ccr ul li span {
+  position: absolute;
+  top: 110px;
+  left: 25px;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 35px 0 10px;
+  font-size: 14px;
+  color: #FFF;
+  background: #666;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  cursor: pointer;
+}
+#ccr ul li span.bg1 {background-color: #B47B00;}
+#ccr ul li span.bg2 {background-color: #7969A1;}
+#ccr ul li span.bg3 {background-color: #63A07D;}
+#ccr ul li span.bg4 {background-color: #6D81AE;}
+#ccr ul li span i.iconfont {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+/*更多栏目*/
+#ccr dl {
+  width: 120px;
+  -width: 117px;
+  height: 140px;
+  padding: 14px;
+  overflow: hidden;
+  background: #F6F6F6;
+}
+/*标题*/
+#ccr dl dt {
+  width: 100%;
+  font-size: 14px;
+  padding-bottom: 7px;
+  border-bottom: 1px dotted #CCC;
+}
+/*列表*/
+#ccr dl dd {
+  float: left;
+  width: 45%;
+  height: 30px;
+  line-height: 30px;
+}
+
+
+/*楼层板块*/
+/*横幅广告样式*/
+.floor a {
+  font-family: "microsoft yahei";
+}
+.floor .banner {
+  position: relative;
+  float: left;
+  width: 1210px;
+  height: 110px;
+  margin: 0 auto 30px;
+}
+.floor .banner .banner-main {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  width: 1200px;
+  height: 125px;
+}
+.floor .banner a,
+.floor .banner a img {
+  float: left;
+  display: block;
+  width: 400px;
+  height: 125px;
+}
+
+.floor .module {
+  clear: both;
+  width: 1210px;
+  float: left;
+  margin-bottom: 30px;
+}
+
+.floor .module .mt {
+  position: relative;
+  height: 37px;
+  line-height: 37px;
+  border-bottom: 1px solid #B61D1D;
+}
+.floor .module .mt h3 {
+  position: relative;
+  float: left;
+  font-size: 20px;
+  font-family: "microsoft yahei";
+  font-weight: normal;
+  padding-left: 40px;
+}
+.floor .module .mt h3 i {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  display: block;
+  width: 27px;
+  height: 25px;
+  line-height: 36px;
+  float: left;
+  padding-left: 2px;
+  font-size: 14px;
+  font-style: normal;
+  color: #FFF;
+  background: url(../images/sprite_floor.png);
+}
+.floor .module .mt .tab {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 36px;
+  border: 1px solid #DEDEDE;
+  border-bottom: none;
+}
+.floor .module .mt .tab li {
+  position: relative;
+  float: left;
+  height: 16px;
+  line-height: 16px;
+}
+.floor .module .mt .tab li a {
+  float: left;
+  margin-top: 11px;
+  padding: 0 15px;
+  border-left: 1px solid #DEDEDE;
+  border-right: 1px solid #FFF;
+}
+.floor .module .mt .tab li.first a {
+  border-left: none;
+}
+.floor .module .mt .tab li.selected a {
+  padding: 0 15px;
+  margin-top: 0;
+  padding-top: 8px;
+  height: 26px;
+  background: #FFF;
+  border-top: 3px solid #B61D1D;
+  border-left: 1px solid #B61D1D;
+  border-right: 1px solid #B61D1D;
+}
+
+.floor .module .mc {
+  position: relative;
+  width: 1210px;
+}
+
+
+.floor .module .mc .main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  float: left;
+  width: 880px;
+  overflow: hidden;
+  display: none;
+}
+
+.floor .module.style-1 .main .main-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 440px;
+}
+.floor .module .main .main-body li {
+  float: left;
+  width: 439px;
+  border-right: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+  overflow: hidden;
+}
+.floor .module .main .main-body li.fore1,
+.floor .module .main .main-body li.fore3 {height: 157px;}
+.floor .module .main .main-body li.fore2 {height: 315px;}
+
+.floor .module.style-1 .main .main-extra {
+  float: right;
+  width: 440px;
+}
+.floor .module.style-1 .main .main-extra li {
+  float: left;
+  width: 220px;
+}
+.floor .module.style-1 .main .main-extra li a {
+  display: block;
+  width: 219px;
+  height: 157px;
+  border-right: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+  overflow: hidden;
+}
+.floor .module.style-1 .main-extra li a.last {
+  height: 315px;
+}
+
+.floor .module .main .img-list {
+  width: 880px;
+  height: 158px;
+}
+.floor .module .main .img-list li {
+  float: left;
+  width: 220px;
+  height: 158px;
+}
+.floor .module .main .img-list li a {
+  float: left;
+  display: block;
+  width: 219px;
+  height: 157px;
+  overflow: hidden;
+  border-right: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+}
+.floor .module .brands {
+  float: left;
+  width: 1210px;
+  padding: 10px 0;
+  margin-top: 10px;
+  background: #F7F7F7;
+  overflow: hidden;
+}
+.floor .module .brands li {
+  float: left;
+  width: 120px;
+  overflow: hidden;
+  border-right: 1px dotted #DEDEDE;
+  text-align: center;
+}
+.floor .module .brands li.last {border-right: none 0;}
+.floor .module .brands li a img {
+  width: 100px;
+  height: 40px;
+}
+
+.floor .module.style-2 .mc .main {
+  float: left;
+  width: 1000px;
+  height: 475px;
+  overflow: hidden;
+}
+
+
+.module .main .p-list {float: left;}
+.module .main .p-list li {
+  float: left;
+  width: 220px;
+  height: 237px;
+}
+.module .main .p-list li .p-box {
+  float: left;
+  width: 185px;
+  height: 219px;
+  padding: 17px 17px 0 17px;
+  border-right: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+}
+.module .main .p-list li .p-box .pic {
+  float: left;
+  width: 185px;
+  height: 145px;
+  text-align: center;
+  overflow: hidden;
+}
+.floor .p-list li .p-box .info {
+  float: left;
+}
+.floor .module .main .p-list li .p-box .info .name {
+  display: inline-block;
+  width: 185px;
+  height: 46px;
+  line-height: 21px;
+  overflow: hidden;
+}
+.floor .module .main .p-list li .p-box .info .price {
+  font-family: Verdana;
+  color: #E4393C;
+  font-size: 15px;
+}
+
+.floor .module.style-2 .main .p-list li{width: 200px;}
+.floor .module.style-2 .main .p-list li .p-box,
+.floor .module.style-2 .main .p-list li .p-box .pic,
+.floor .module.style-2 .main .p-list li .p-box .info .name {width: 165px;}
+
+.floor .module.style-3 .mc .main {
+  width: 880px;
+  height: 474px;
+}
+.floor .module.style-3 .mc .main .main-body {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 440px;
+  overflow: hidden;
+}
+.floor .module.style-3 .mc .main .main-body li {
+  float: left;
+  width: 220px;
+  height: 118px;
+  border: none 0;
+}
+.floor .module.style-3 .mc .main .main-body li a {
+  float: left;
+  width: 219px;
+  height: 117px;
+  overflow: hidden;
+  border-right: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+}
+.floor .module.style-3 .main .main-extra {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 880px;
+}
+.floor .module.style-3 .main .main-extra li {
+  float: left;
+  width: 220px;
+  height: 238px;
+  overflow: hidden;
+}
+.floor .module.style-3 .main .main-extra li a {
+  float: left;
+  height: 237px;
+  border-right: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+}
+
+/*热门作者板块*/
+#floor10 .main .popular {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 339px;
+  height: 473px;
+  border-right: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+}
+/*标题*/
+#floor10 .main .popular dt {
+  height: 45px;
+  line-height: 45px;
+  margin: 0 15px;
+  font-size: 20px;
+  border-bottom: 1px solid #E4E4E4;
+  font-family: "microsoft yahei";
+  color: #666;
+}
+/*行样式*/
+#floor10 .main .popular dd {
+  height: 87px;
+  padding: 10px 0;
+  float: left;
+}
+/*作者*/
+#floor10 .main .popular dd .author {
+  float: left;
+  width: 90px;
+  height: 80px;
+  text-align: center;
+  border-right: 1px solid #E4E4E4;
+  overflow: hidden;
+}
+/*作者头像*/
+#floor10 .main .popular dd .author img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+/*作者姓名*/
+#floor10 .main .popular dd .author a span {
+  display: block;
+  width: 70px;
+  padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*书本图像*/
+#floor10 .main .popular dd .pic {
+  float: left;
+}
+#floor10 .main .popular dd .pic img {
+  width: 80px;
+  height: 80px;
+}
+/*书本信息*/
+#floor10 .main .popular dd .info {
+  position: relative;
+  float: left;
+  margin-left: 8px;
+}
+/*书本名称*/
+#floor10 .main .popular dd .info .title {
+  display: block;
+  font-size: 14px;
+  line-height: 23px;
+  width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*书本简介*/
+#floor10 .main .popular dd .info .detail {
+  display: block;
+  width: 125px;
+  height: 39px;
+  padding: 8px 10px;
+  color: #666;
+  background-color: #F8F8F8;
+  overflow: hidden;
+}
+/*三角形小图标*/
+#floor10 .main .popular dd .info i {
+  position: absolute;
+  top: 55%;
+  left: -5px;
+  font-style: normal;
+  color: #F8F8F8;
+}
+
+
+/*2F,6F,7F,8F,9F 首页样式*/
+/*基本样式*/
+/*2楼的列表宽度*/
+.floor .module#floor2 .mc .main-list {
+  float: left;
+  width: 660px;
+  height: 476px;
+  overflow: hidden;
+}
+/*6,7,8,9楼的列表宽度*/
+.floor .module#floor6 .mc .main-list,
+.floor .module#floor7 .mc .main-list,
+.floor .module#floor8 .mc .main-list,
+.floor .module#floor9 .mc .main-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1000px;
+  height: 474px;
+}
+/*10楼的列表宽度*/
+.floor .module#floor10 .mc .main-list {
+  width: 660px;
+}
+/*默认的窗口样式*/
+.floor .module .mc .main-list li {
+  float: left;
+  width: 220px;
+  height: 237px;
+  overflow: hidden;
+}
+/*默认的窗口样式*/
+.floor .module .mc .main-list li a {
+  display: block;
+  width: 219px;
+  height: 236px;
+  overflow: hidden;
+  border-bottom: 1px solid #DEDEDE;
+  border-right: 1px solid #DEDEDE;
+}
+/*6,7,8,9楼,第一个和第四个窗口的宽度(覆盖默认样式,留空空白区域给幻灯片定位)*/
+.floor .module .mc .main-list li.fore1, 
+.floor .module .mc .main-list li.fore4, 
+.floor .module .mc .main-list li.fore1 a, 
+.floor .module .mc .main-list li.fore4 a {width: 560px; }
+/*10楼第一个窗口的宽度(覆盖默认样式,留空空白区域给幻灯片定位)*/
+.floor .module#floor10 .mc .main-list li.fore1, 
+.floor .module#floor10 .mc .main-list li.fore1 a {width: 660px; }
+/*2楼的两种窗口大小(覆盖默认样式)*/
+.floor .module .mc .main-list li.b       {height: 296px;}
+.floor .module .mc .main-list li.b a     {height: 295px;}
+.floor .module .mc .main-list li.s       {height: 178px;}
+.floor .module .mc .main-list li.s a     {height: 177px;}
+
+/*风格二 11楼的幻灯片窗口*/
+.floor .module#floor11 .mc .mcl {
+  position: relative;
+  width: 605px;
+  height: 474px;
+  float: left;
+}
+.floor .module#floor11 .mc .mcr {
+  position: relative;
+  width: 605px;
+  height: 474px;
+  float: left;
+}
+.floor .module#floor11 .mc .slide {
+  width: 395px;
+  height: 238px;
+}
+.floor .module#floor11 .mc .slide .pics-box {
+  width: 1800px;
+}
+.floor .module#floor11 .mc .slide a,
+.floor .module#floor11 .mc .slide a img {
+  width: 395px !important;
+  height: 237px !important;
+}
+.floor .module#floor11 .mc .main-list {
+  width: 394px;
+  _width: 392px;
+  height: 237px;
+  overflow: hidden;
+}
+.floor .module#floor11 .mcr .main-list {
+  _border: none 0;
+}
+.floor .module#floor11 .mc .main-list li {
+  width: 197px;
+  _width: 196px;
+  height: 118px;
+  overflow: hidden;
+}
+.floor .module#floor11 .mc .main-list li a,
+.floor .module#floor11 .mc .main-list li a img {
+  width: 196px;
+  _width: 195px;
+  height: 117px;
+  overflow: hidden;
+}
+.floor .module#floor11 .mc .main-list li a {
+  border-right: 1px solid #DEDEDE;
+}
+.floor .module#floor11 .mc .main-list li.r {
+
+}
+.floor .module#floor11 .mc .main-list li.r a,
+.floor .module#floor11 .mc .main-list li.r a img {
+  width: 197px !important;
+}
+/*幻灯片窗口整体样式*/
+.slide {
+  position: relative;
+  z-index: 10;
+  float: left;
+  overflow: hidden;
+}
+/*幻灯片图片容器*/
+.slide .pics-box {
+  position: absolute;
+  width: 8000px;
+}
+.slide .pics-box a {
+  float: left;
+  display: block;
+  overflow: hidden;
+}
+/*按钮默认是隐藏的,当鼠标悬停幻灯片窗口时,通过js更改为显示*/
+.slide .btn {display: none;}
+/*按钮共用样式*/
+.slide .btn span {
+  position: absolute;
+  top: 40%;
+  display: block;
+  width: 28px;
+  height: 62px;
+  line-height: 62px;
+  font-size: 12px;
+  text-align: center;
+  color: #FFF;
+  background-color: #3E3E3E;
+  opacity: 0.3;
+  cursor: pointer;
+}
+/*上一张按钮*/
+.slide .btn span.prev { left: 0;}
+/*下一张按钮*/
+.slide .btn span.next {right: 0;}
+/*幻灯片控制导航*/
+.slide .slide-control {
+  position: absolute;
+  bottom: 10px;
+  left: 40%;
+}
+/*幻灯片控制导航列表项*/
+.slide .slide-control li {
+  float: left;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  margin-right: 8px;
+  text-align: center;
+  color: #FFF;
+  background-color: #3E3E3E;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/*当前幻灯片图片对应的幻灯片导航列表项添加此样式*/
+.slide .slide-control li.selected {background: #B1191A;}
+
+.floor .slide .slide-control li {
+  text-indent: -999px;
+  width: 9px;
+  height: 9px;
+  overflow: hidden;
+}
+/*焦点区域幻灯片窗口*/
+#focus .slide {
+  width: 730px;
+  height: 454px;
+}
+/*今日推荐幻灯片窗口*/
+#todays .slide {
+  width: 1000px;
+  height: 164px;
+  overflow: hidden;
+}
+/*风格一 1楼的幻灯片窗口*/
+.floor .style-1 .slide {
+  position: absolute;
+  top: 158px;
+  left: 0;
+  z-index: 10;
+  width: 439px;
+  height: 315px;
+}
+.floor .style-1 .slide img {width: 439px;height: 315px;}
+
+/*所有风格二楼层默认幻灯片窗口大小*/
+.floor .style-2 .slide {
+  width: 340px;
+  height: 473px;
+}
+/*风格二, 2楼的幻灯片窗口大小*/
+.floor .style-2#floor2 .slide {
+  width: 340px;
+  height: 475px;
+}
+/*风格二, 6,7,8,9楼的幻灯片窗口*/
+.floor .style-2#floor6 .slide,
+.floor .style-2#floor7 .slide,
+.floor .style-2#floor8 .slide,
+.floor .style-2#floor9 .slide {
+  position: absolute;
+  top: 0;
+  left: 220px;
+}
+/*风格二 10楼的幻灯片窗口*/
+.floor .style-2#floor10 .slide {
+  width: 441px;
+  height: 236px;
+  position: absolute;
+  left: 219px;
+}
+/*默认图片容器宽度*/
+.floor .style-2 .slide .pics-box {
+  width: 1500px;
+}
+/*10楼的图片容器宽度*/
+.floor .style-2#floor10 .slide .pics-box {
+  width: 1800px;
+}
+/*风格二,默认图片大小*/
+.floor .style-2 .slide .pics-box a,
+.floor .style-2 .slide .pics-box a img {
+  width: 340px;
+  height: 237px;
+}
+/*风格二,9楼的幻灯片图片大小(覆盖默认样式)*/
+.floor .style-2#floor9 .slide .pics-box a,
+.floor .style-2#floor9 .slide .pics-box a img {
+  width: 340px;
+  height: 473px;
+}
+/*风格二,10楼的幻灯片图片大小(覆盖默认样式)*/
+.floor .style-2#floor10 .slide .pics-box a,
+.floor .style-2#floor10 .pics-box a img {
+  width: 441px !important;
+  height: 236px !important;
+}
+/*风格二,11楼的幻灯片图片大小(覆盖默认样式)*/
+/*风格二,需要一大一小图片展示添加此类*/
+.floor .style-2 .slide .pics-box a.b,
+.floor .style-2 .slide .pics-box a.b img {
+  width: 339px;
+  height: 296px;
+}
+/*风格二,需要一大一小图片展示添加此类*/
+.floor .style-2 .slide .pics-box a.s,
+.floor .style-2 .slide .pics-box a.s img {
+  width: 339px;
+  height: 176px;
+  border-top: 1px dotted #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+}
+/*风格三 3,4,5楼的幻灯片窗口*/
+.floor .style-3 .slide,
+.floor .style-3 .slide img {width: 440px;height: 236px;}
+
+/*第一种侧边栏样式*/
+/*侧边栏外部容器*/
+.floor .module .side {
+  float: left;
+  width: 330px;
+}
+/*侧边栏板块*/
+.floor .module .side-inner {
+  position: relative;
+  float: left;
+  width: 330px;
+  height: 474px;
+}
+/*风格一的侧边栏板块*/
+.floor .module.style-1 .side-inner {height: 473px;}
+/*各楼层的侧边栏板块背景*/
+.floor .module#floor1 .side-inner {background: url(../images/5548a249Nabef3f7e.jpg);}
+.floor .module#floor3 .side-inner {background: url(../images/554b44aeNc15cd877.jpg);}
+.floor .module#floor4 .side-inner {background: url(../images/55470b99N7e2d23fa.jpg);}
+.floor .module#floor5 .side-inner {background: url(../images/554a11a2N72805b8d.jpg);}
+/*默认主题板块样式*/
+.floor .module .side-inner .themes {
+  position: absolute;
+  top: 254px;
+  left: 0;
+  width: 310px;
+  padding-left: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  _background-color: #DFEDF0;
+}
+/*主题板块列表项样式*/
+.floor .module .side-inner .themes li {
+  float: left;
+  width: 32%;
+  height: 45px;
+  line-height: 45px;
+}
+/*默认主题板块链接样式*/
+.floor .module .side-inner .themes li a {
+  float: left;
+  font-size: 14px;
+}
+/*主题板块图标样式*/
+.floor .module .side-inner .themes li a i {
+  color: #666;
+  font-size: 24px;
+  padding-right: 3px;
+}
+/*风格三主题板块样式(覆盖默认样式)*/
+.floor .module.style-3 .side-inner .themes{
+  top: 236px !important;
+}
+/*4,5楼主题列表项样式宽度(覆盖默认样式)*/
+.floor .module#floor4 .side-inner .themes li,
+.floor .module#floor5 .side-inner .themes li {
+  width: 49%;
+}
+/*默认文字列表板块样式*/
+.floor .module .side-inner .words {
+  position: absolute;
+  bottom: 0;
+  _bottom: -1px;
+  width: 290px;
+  height: 92px;
+  padding: 20px;
+  background: #F3F8F9;
+}
+/*默认文字列表链接样式*/
+.floor .module .side-inner .words li a {
+  float: left;
+  width: 49%;
+  height: 22px;
+  line-height: 22px;
+  overflow: hidden;
+}
+/*风格三的文字列表板块样式*/
+.floor .module.style-3 .side-inner .words {
+  height: 154px;
+  overflow: hidden;
+}
+/*侧边栏板块热点主题(标题)*/
+.floor .module .side-inner .words li.fore3 {
+  float: left;
+  margin-bottom: 13px;
+ }
+.floor .module .side-inner .words li.fore3 a {font-size: 14px;}
+/*侧边栏板块最底部的左右两排文字列表(关键字)*/
+.floor .module .side-inner .words li.fore1,
+.floor .module .side-inner .words li.fore2 {
+  width: 50%;
+  float: left;
+}
+/*额外区域*/
+.floor .module .side-extra {
+  float: left;
+  width: 328px;
+  height: 157px;
+  border: 1px solid #DEDEDE;
+}
+.floor .module .side-extra a {
+  display: block;
+  width: 328px;
+  height: 157px;
+  overflow: hidden;
+}
+
+/*第二种侧边栏样式*/
+/*侧边栏外部容器*/
+.floor .module .side2 {
+  float: left;
+  width: 210px;
+  overflow: hidden;
+}
+/*默认侧边栏板块样式*/
+.floor .module .side2-inner {
+  position: relative;
+  width: 210px;
+  height: 474px;
+  background: url(../images/5549841fN9afc4ce1.jpg) no-repeat;
+}
+/*各楼层的侧边栏背景(覆盖默认样式)*/
+.floor .module#floor6 .side2-inner {background: url(../images/554b7f62N5ccba3af.jpg) no-repeat;}
+.floor .module#floor7 .side2-inner {background: url(../images/554c2848N22f6874f.jpg) no-repeat;}
+.floor .module#floor8 .side2-inner {background: url(../images/554b2094Ne83ffe27.jpg) no-repeat;}
+.floor .module#floor9 .side2-inner {background: url(../images/554ad6f8N291c54e4.jpg) no-repeat;}
+.floor .module#floor10 .side2-inner {background: url(../images/54c7626aN5b3a0388.jpg) no-repeat;}
+.floor .module#floor11 .mcl .side2-inner {background: url(../images/55272d41Nddca58e3.jpg) no-repeat;}
+.floor .module#floor11 .mcr .side2-inner {background: url(../images/554ab7e8N1a1284c9.jpg) no-repeat;}
+/*默认主题板块样式*/
+.floor .module .side2-inner .themes {
+  position: absolute;
+  top: 237px;
+  left: 0;
+  width: 200px;
+  height: 90px;
+  padding-left: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  _background-color: #F8E3ED;
+}
+/*6楼的主题板块样式(覆盖默认样式)*/
+.floor .module#floor6 .side2-inner .themes {background-color: rgba(255, 255, 255, 0.5);_background-color: #F3F3E0;}
+.floor .module#floor7 .side2-inner .themes {background-color: rgba(255, 255, 255, 0.5);_background-color: #FAE6CC;}
+.floor .module#floor8 .side2-inner .themes {background-color: rgba(255, 255, 255, 0.5);_background-color: #E3F4F9;}
+.floor .module#floor9 .side2-inner .themes {background-color: rgba(255, 255, 255, 0.5);_background-color: #FFF3F4;}
+.floor .module#floor10 .side2-inner .themes {background-color: rgba(255, 255, 255, 0.5);_background-color: #ECF7FB;}
+.floor .module#floor11 .mcl .side2-inner .themes {background-color: rgba(255, 255, 255, 0.5);_background-color: #FBF6ED;}
+.floor .module#floor11 .mcr .side2-inner .themes {background-color: rgba(255, 255, 255, 0.5);_background-color: #E2F4F9;}
+/*主题板块列表项样式*/
+.floor .module .side2-inner .themes li {
+  float: left;
+  width: 50%;
+  height: 45px;
+  line-height: 45px;
+}
+.floor .module#floor11 .side2-inner .themes li {
+  width: 150px;
+  padding-left: 17px;
+}
+/*默认主题板块链接样式*/
+.floor .module .side2-inner .themes li a {
+  float: left;
+  font-size: 14px;
+}
+/*主题板块图标样式*/
+.floor .module .side2-inner .themes li a i {
+  color: #666;
+  font-size: 24px;
+  padding-right: 3px;
+}
+/*默认文字列表板块样式*/
+.floor .module .side2-inner .words {
+  position: absolute;
+  bottom: 0;
+  width: 170px;
+  height: 108px;
+  padding: 20px;
+  overflow: hidden;
+}
+/*各楼层文字列表背景*/
+.floor .module#floor6 .side2-inner .words {background: #F7F7EC;}
+.floor .module#floor7 .side2-inner .words {background: #FCEFDF;}
+.floor .module#floor8 .side2-inner .words {background: #E8F6FA;}
+.floor .module#floor9 .side2-inner .words {background: #FFF6F8;}
+.floor .module#floor10 .side2-inner .words {background: #F2F9FC;}
+.floor .module#floor11 .mcl .side2-inner .words {background: #FCF8F2;}
+.floor .module#floor11 .mcr .side2-inner .words {background: #EAF7FB;}
+/*侧边栏板块热点主题(标题)*/
+.floor .module .side2-inner .words .fore1 a {
+  display: inline-block;
+  font-size: 14px;
+}
+/*侧边栏板块最底部的文字列表(关键字)*/
+.floor .module .side2-inner .words .fore2 {
+  margin-top: 20px;
+  height: 58px;
+  overflow: hidden;
+}
+.floor .module .side2-inner .words .fore2 a {
+  display: inline-block;
+  margin-right: 10px;
+}
+/*6楼的文字列表板块样式(覆盖默认样式)*/
+.floor .module#floor6 .side2-inner .words {
+  background: #F7F7EC;
+}
+
+
+/*特殊板块*/
+#special {color: #666;}
+/*标题容器*/
+#special .mt {
+  height: 100%;
+  height: 36px;
+}
+/*标题*/
+#special .mt h3 {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  font-family: "microsoft yahei";
+  font-weight: normal;
+}
+/*今日抄底板块*/
+#special .lower {
+  float: left;
+  width: 900px;
+  overflow: hidden;
+}
+/*今日抄底列表窗口*/
+#special .lower ul {
+  width: 1000px;
+  border-top: 1px solid #DEDEDE;
+}
+#special .lower ul li {
+  float: left;
+  width: 199px;
+  height: 104px;
+  padding: 18px 10px;
+  border-right: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+  overflow: hidden;
+}
+/*今日抄底产品图片*/
+#special .lower ul li .pic {
+  float: left;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+/*今日抄底产品介绍*/
+#special .lower ul li .info {
+  float: right;
+  width: 90px;
+}
+/*今日抄底产品名称*/
+#special .lower ul li .info .name {
+  height: 36px;
+  overflow: hidden;
+}
+/*今日抄底产品价格*/
+#special .lower ul li .info .price {
+  display: block;
+  color: #E12228;
+  font-size: 16px;
+  font-weight: 700px;
+}
+/*今日抄底第一个产品窗口(覆盖默认样式)*/
+#special .lower ul li.fore1 {
+  width: 219px;
+  height: 245px;
+  border-left: 1px solid #DEDEDE;
+}
+/*今日抄底第一个产品图片容器大小(覆盖默认样式)*/
+#special .lower ul li.fore1 .pic {
+  width: 219px;
+  height: 180px;
+  text-align: center;
+}
+/*今日抄底第一个产品图片大小(覆盖默认样式)*/
+#special .lower ul li.fore1 .pic img {
+  width: 160px;
+  height: 160px;
+}
+/*今日抄底第一个产品介绍宽度(覆盖默认样式)*/
+#special .lower ul li.fore1 .info {
+  float: left;
+  width: 200px;
+}
+
+/*热门晒单板块*/
+#special .share {
+  float: left;
+  width: 310px;
+}
+#special .share .mc {
+  position: relative;
+  width: 268px;
+  height: 226px;
+  padding: 35px 20px 20px 20px;
+  border: 1px solid #DEDEDE;
+  overflow: hidden;
+}
+#special .share .mc ul {
+  position: absolute;
+  top: 35px;
+}
+#special .share .mc ul li {
+  width: 266px;
+  height: 123px;
+}
+#special .share .mc .pic {
+  display: inline-block;
+  float: left;
+  width: 80px;
+  height: 100px;
+}
+
+#special .share .mc .pic img {
+  width: 80px;
+  height: 80px;
+}
+#special .share .mc .info {
+  position: relative;
+  float: left;
+  width: 176px;
+  height: 87px;
+  margin-left: 10px;
+}
+#special .share .mc .info i {
+  position: absolute;
+  top: 55%;
+  left: -5px;
+  color: #F8F8F8;
+  font-style: normal;
+}
+#special .share .mc .info .user {
+  display: block;
+  height: 28px;
+  line-height: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
+#special .share .mc .info .user img {
+  float: left;
+  height: 28px;
+  line-height: 28px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+#special .share .mc .info .comment {
+  display: block;
+  width: 135px;
+  height: 34px;
+  padding: 10px;
+  margin-top: 5px;
+  background: #F8F8F8;
+  overflow: hidden;
+}
+#special .share .mc .info .comment a {
+  display: inline-block;
+  height: 34px;
+  overflow: hidden;
+}
+
+
+.advantage {
+  float: left;
+  width: 100%;
+  height: 94px;
+  margin: 20px 0;
+  background: #F5F5F5;
+}
+.advantage span {
+  float: left;
+  display: block;
+  width: 220px;
+  height: 54px;
+  margin: 20px 82px 0 0;
+}
+.advantage span.fore1 {background: url(../images/service_items_1.png) no-repeat;}
+.advantage span.fore2 {background: url(../images/service_items_2.png) no-repeat;}
+.advantage span.fore3 {background: url(../images/service_items_3.png) no-repeat;}
+.advantage span.fore4 {background: url(../images/service_items_4.png) no-repeat; margin-right: 0;}
+
+#footer {
+  clear: both;
+  overflow: hidden;
+}
+
+#footer dl {
+  float: left;
+  width: 195px;
+}
+#footer dl dt,
+#footer .coverage .dt {
+  font-size: 20px;
+  line-height: 30px;
+  padding: 6px 0;
+}
+#footer dl dd,
+#footer .coverage .dd {
+  line-height: 20px;
+}
+
+#footer .coverage {
+  float: left;
+  width: 215px;
+  height: 155px;
+  background: url(../images/20130330B_1.png) no-repeat 0 -130px;
+  overflow: hidden;
+}
+#footer .coverage .dd .ar {
+  float: right;
+}
+#bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #DEDEDE;
+  color: #666;
+  overflow: hidden;
+}
+#bottom .links a {
+  margin: 0 8px;
+}
+#bottom .copy {
+  margin-top: 10px;
+  line-height: 20px;
+}
+#bottom .authentication {
+  margin: 10px 0 20px 0;
+}
+#bottom .authentication a {
+  overflow: hidden;
+  margin: 0 5px;
+}
+#bottom .authentication a img {
+  height: 32px;
+}
+
+
+
+
+
+.elevator {
+  position: fixed;
+  overflow: hidden;
+  _display: none !important;
+}
+.elevator a {
+  display: block;
+  text-align: center;
+}
+.elevator a .text {display: none;}
+
+.elevator a:hover .icon,
+.elevator a.current .icon {display: none;}
+
+.elevator a:hover .text,
+.elevator a.current .text {display: inline;}
+
+#back-top {
+  display: none;
+  right: 20px;
+  bottom: 0;
+}
+#back-top a {
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  color: #FFF;
+}
+#back-top a.go-top           {background: #999; margin-bottom: 1px;}
+#back-top a.go-top:hover,
+#back-top a.go-top.current   {background: #C81623;}
+#back-top a.feedback         {background: #CCC;}
+#back-top a.feedback:hover,
+#back-top a.feedback.current {background: #C81623;}
+
+#floor-elevator {
+  left: 40px;
+  top: 140px;
+  display: none;
+}
+#floor-elevator li.first a {
+  background-image: none !important;
+}
+#floor-elevator a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background: url(../images/indexxx.png) no-repeat;
+}
+#floor-elevator a:hover,
+#floor-elevator a.current {
+  color: #FFF;
+  background-color: #C81623;
+}
+#floor-elevator a .icon {
+  font-size: 14px;
+}
